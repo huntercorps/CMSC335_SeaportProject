@@ -1,37 +1,40 @@
 # CMSC335_SeaportProject
 ## Introduction - the SeaPort Project series, Project 4
 For this set of projects for the course, we wish to simulate some of the aspects of a number of Sea Ports. Here are the classes and their instance variables we wish to define:
- SeaPortProgram extends JFrame
-o variables used by the GUI interface o world: World
- Thing implement Comparable <Thing> o index: int
-o name: String
-o parent: int
- World extends Thing
-o ports: ArrayList <SeaPort>
-o time: PortTime  SeaPort extends Thing
-o docks: ArrayList <Dock>
-o que: ArrayList <Ship> // the list of ships waiting to dock
-o ships: ArrayList <Ship> // a list of all the ships at this port
-o persons: ArrayList <Person> // people with skills at this port
- Dock extends Thing o ship: Ship
- Ship extends Thing
-o arrivalTime, dockTime: PortTime
-o draft, length, weight, width: double o jobs: ArrayList <Job>
- PassengerShip extends Ship
-o numberOfOccupiedRooms: int o numberOfPassengers: int
-o numberOfRooms: int
- CargoShip extends Ship
-o cargoValue: double
-o cargoVolume: double
-o cargoWeight: double  Person extends Thing
-o skill: String
- Job extends Thing - optional till Projects 3 and 4
-o duration: double
-o requirements: ArrayList <String>
-// should be some of the skills of the persons  PortTime
-o time: int
+- SeaPortProgram extends JFrame
+  -- variables used by the GUI interface 
+  -- world: World
+- Thing implement Comparable <Thing> o index: int
+  -- name: String
+  -- parent: int
+- World extends Thing
+    -- ports: ArrayList <SeaPort>
+    -- time: PortTime  SeaPort extends Thing
+    -- docks: ArrayList <Dock>
+    -- que: ArrayList <Ship> // the list of ships waiting to dock
+    -- ships: ArrayList <Ship> // a list of all the ships at this port
+    -- persons: ArrayList <Person> // people with skills at this port
+- Dock extends Thing o ship: Ship
+- Ship extends Thing
+    -- arrivalTime, dockTime: PortTime
+    -- draft, length, weight, width: double o jobs: ArrayList <Job>
+    -- PassengerShip extends Ship
+    -- numberOfOccupiedRooms: int o numberOfPassengers: int
+    -- numberOfRooms: int
+- CargoShip extends Ship
+    -- cargoValue: double
+    -- cargoVolume: double
+    -- cargoWeight: double 
+-Person extends Thing
+    -- skill: String
+- Job extends Thing - optional till Projects 3 and 4
+    -- duration: double
+    -- requirements: ArrayList <String> // should be some of the skills of the persons 
+- PortTime
+    -- time: int
+  
 Eventually, in Projects 3 and 4, you will be asked to show the progress of the jobs using JProgressBar's.
-1
+
 Here's a very quick overview of all projects:
 1. Read a data file, create the internal data structure, create a GUI to display the structure, and let the user search the structure.
 2. Sort the structure, use hash maps to create the structure more efficiently.
@@ -46,23 +49,24 @@ o Threads competing for multiple resources
  Extending the GUI interface to visualize the resource pools and progress of the various threads.
 ### Documentation Requirements:
 You should start working on a documentation file before you do anything else with these projects, and fill in items as you go along. Leaving the documentation until the project is finished is not a good idea for any number of reasons.
+
 The documentation should include the following (graded) elements:
- Cover page (including name, date, project, your class information)
- Design
-o including a UML class diagram
-o classes, variables and methods: what they mean and why they are there o tied to the requirements of the project
- User's Guide
-o how would a user start and run your project
-o any special features
-o effective screen shots are welcome, but don't overdo this
- Test Plan
-o do this BEFORE you code anything
-o what do you EXPECT the project to do
-o justification for various data files, for example
- Lessons Learned
-o express yourself here
-o a way to keep good memories of successes after hard work
-2
+
+- Cover page (including name, date, project, your class information)
+- Design
+  - including a UML class diagram
+  - classes, variables and methods: what they mean and why they are there o tied to the requirements of the project
+- User's Guide
+  - how would a user start and run your project
+  - any special features
+  - effective screen shots are welcome, but don't overdo this
+- Test Plan
+  - do this BEFORE you code anything
+  - what do you EXPECT the project to do
+  - justification for various data files, for example
+- Lessons Learned
+  - express yourself here
+  - a way to keep good memories of successes after hard work
 
 ### Project 4 Specific Goals:
 Extend project 3 to include making jobs wait until people with the resources required by the job are available at the port.
